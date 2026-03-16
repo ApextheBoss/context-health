@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Context Health — AI Chat Monitor",
+  "version": "0.1.0",
+  "description": "See how much context window you've used. Stop wasting time on dead conversations.",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://claude.ai/*",
+        "https://gemini.google.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["overlay.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
